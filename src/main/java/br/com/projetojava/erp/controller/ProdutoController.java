@@ -28,7 +28,9 @@ public class ProdutoController {
 	@PostMapping("/exemplo")
 	public ResponseEntity<String> retornaProduto(@RequestBody FiltroProdutoVO filtro) {
 
-		final String valor = "O produto " + filtro.
+		final String valor = "O produto " + filtro.getDescricao() + " possui esse codigo: " + filtro.getCodigo();
+		
+		return ResponseEntity.status(HttpStatus.OK).body(valor);
 		
 	}
 
